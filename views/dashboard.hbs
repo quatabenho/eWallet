@@ -1,0 +1,177 @@
+<div class="content_index">
+                    <div class="row">
+                        <!-- big left -->
+                        <div class="col-md-7 col-sm-12">
+
+                            <div class="dashboard_account-brief_info">
+                                <div class="brief-wrapper">
+                                    <div class="brief-upper">
+                                        <div class="brief_info-user">
+                                            <p class="brief_info-user_title">Account Type</p>
+                                            <span class="brief_info-user_data">
+                                                {{#if user}}
+                                                    {{user.acc_info}}
+                                                {{else}}
+                                                    Default
+                                                {{/if}}
+                                            </span>
+                                        </div>
+                                    </div>
+    
+                                    <div class="brief_info-account">
+                                        <div class="brief_info-user">
+                                            <p class="brief_info-user_title">Balance</p>
+                                            <span class="brief_info-user_data balance">
+                                                {{#if data}}
+                                                    {{data.accountBalance}}
+                                                {{else}}
+                                                    0
+                                                {{/if}}
+                                            </span>
+                                        </div>
+    
+                                        <div>
+                                            <a href="/profile" type="button" class="btn btn-outline-light">Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- history -->
+                            <div class="dashboard_history">
+                                <div class="dashboard_history-header">
+                                    <!-- <div class="row">
+                                        <div class="col-lg-5 col-md-7">
+
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-0">
+                                            
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-5">
+                                            
+                                        </div>
+                                    </div> -->
+                                    <div class="row">
+                                        <div class="dashboard_history-left col-lg-4 col-md-4">
+                                            <h5 class="dashboard_history-title">Payment History</h5>
+
+                                            <!-- helper hbs here -->
+                                            <div class="transfer-source brief_box" onclick="viewTransferDetailInfo()">
+                                                    
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="dashboard_history-middle col-lg-4 col-md-4">
+                                            <div class="right_attribute-date">Date</div>
+
+                                            <!-- helper hbs here -->
+                                           
+                                        </div>
+
+    
+                                        <div class="dashboard_history-right col-lg-4 col-md-4">
+                                            <div class="right_attribute-debit">Debit</div>
+
+                                            <!-- helper hbs here -->
+                                           
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                            
+                        
+                        </div>
+                        
+                        <!-- big right -->
+                        <div class="col-md-5 col-sm-0 account-summary">
+                            <div class="notifications">
+                                <h5 class="notifications-title">Latest notifications</h5>
+                                
+                                <ul class="notifications-list list-group list-group-flush">
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    
+                    
+                        
+                    </div>
+                </div>
+
+
+<div class="modal fade" id="transferDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Transfer detail: </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body detail_container">
+          <div class="detail_box">
+              <h6 class="detail_box-title">Actor</h6>
+              <p class="detail_box-value username">Monika</p>
+          </div>
+
+          <div class="detail_box">
+              <h6 class="detail_box-title">Service</h6>
+              <p class="detail_box-value transferType">Transfer</p>
+          </div>
+
+          <div class="detail_box">
+              <h6 class="detail_box-title">Status</h6>
+              <div class="detail_box-value status">Pending</div>
+          </div>
+
+          <div class="detail_box">
+              <h6 class="detail_box-title">Amount</h6>
+              <p class="detail_box-value amount">2,000,000 VND</p>
+          </div>
+
+          <div class="detail_box">
+              <h6 class="detail_box-title">Date</h6>
+              <p class="detail_box-value occur">26/2/2020</p>
+          </div>
+
+          <div class="detail_box">
+              <h6 class="detail_box-title">Fee</h6>
+              <p class="detail_box-value fee">1,233 VND</p>
+          </div>
+
+      </div>
+
+      <div class="detail_box-message">
+              <h6 class="detail_box-title">Message</h6>
+              <p class="detail_box-value message">Hello friend Hello friendHello friendHello friendHello friendHello friendHello friendHello friendHello friendHello friend</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="dashboard_card_detail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Purchase successfully</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h3>Recharge Code: </h3>
+        <div class="dashboard_purchase_success-box">
+            <h6 class="purchase_success-box_title">11117345 - Viettel</h6>
+            <p class="purchase_success-box_code">*100*342542345234592385#</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

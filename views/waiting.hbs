@@ -1,0 +1,171 @@
+<main>
+        <div class="container-fluid px-4">
+            <h1 class="mt-4 mb-3">Danh sách user đang chờ</h1>
+            
+            <div class="row">
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-primary text-white">
+                        <div class="card-body">TK đã kích hoạt</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" href="/admin">Xem chi tiết</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-warning text-white mb-4">
+                        <div class="card-body">TK vô hiệu hoá</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" href="/admin/deactivated">Xem chi tiết</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-success text-white mb-4">
+                        <div class="card-body">TK chờ kích hoạt</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" href="/admin/waiting">Xem chi tiết</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-danger text-white mb-4">
+                        <div class="card-body">TK đã khoá</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" href="/admin/ban">Xem chi tiết</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </main>
+
+<div id="waiting-content" class="row view-task">
+    <div class="col-sm-11 col-md-9 col-lg-9 col-xl-10 w-100 main view-task-main pending_accounts-list">   
+
+            
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Kích hoạt?</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            Tài khoản {Username}
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Đóng</button>
+            <button type="button" class="btn btn-success">Chấp thuận</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdropRefuse" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Từ chối tài khoản</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {Username}
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+            <button type="button" class="btn btn-danger">Từ chối</button>
+            </div>
+        </div>
+        </div>
+    </div>
+                <!-- Chart cho đẹp -->
+                
+        </main>
+    </div>
+
+
+
+<div class="modal fade" id="profile" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Thông tin tài khoản</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+             <div class="pending_accounts_content">
+                    <div class="account_content-avatar_wrapper" >
+                        <div class="account_content-avatar">
+                            <img class = "account_content-avatar_img" src="/images/avatar/unknown_person.png" alt="avatar">
+                        </div>
+
+                        <div class="account_content-icon">
+                            <i class="fas fa-camera text-success "></i>
+                        </div>
+                    </div>
+
+                    <div class="row profile_wrapper" action="" method="post" >
+                        <div class="col-md-6">
+                            <div class="input_form">
+                                <p class="input_form-title">Username: </p>
+                                <div class="input_form-holder input-disable" id="pending_accounts-username">#234325431</div>
+                            </div>
+                            <div class="input_form">
+                                <p class="input_form-title">Email: </p>
+                                <div class="input_form-holder" id="pending_accounts-email">abc@gmail.com
+                                </div>
+                            </div>
+                            <div class="input_form">
+                                <p class="input_form-title">Địa chỉ: </p>
+                                <div class="input_form-holder" id="pending_accounts-address">123 Ly Tu Trong, Nha Trang, Khanh Hoa</div>
+                            </div>
+
+                            <div class="input_form">
+                                <p class="input_form-title" >Front ID image: </p>
+                                <img id="pending_accounts-front-id" src="" alt="">
+                            </div>
+                        
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="input_form">
+                                <p class="input_form-title">Họ và tên: </p>
+                                <div class="input_form-holder" id="pending_accounts-name">Nguyen Van A
+                                    
+                                </div>
+                            </div>
+
+                            <div class="input_form">
+                                <p class="input_form-title">Số điện thoại: </p>
+                                <div class="input_form-holder" id="pending_accounts-phone">123456789
+                                   
+                                </div>
+                            </div>
+
+                            <div class="input_form">
+                                <p class="input_form-title">Ngày sinh: </p>
+                                <div class="input_form-holder" id="pending_accounts-birthday">24/01/2002</div>
+                            </div>
+
+                            <div class="input_form">
+                                <p class="input_form-title">Back ID image: </p>
+                                <img id="pending_accounts-back-id" src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
