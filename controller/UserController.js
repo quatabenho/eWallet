@@ -23,15 +23,19 @@ const UserController = {
             if (err) return res.status(400).send('unknown error when register')
             const resultMsg = register.userRegister( fields, files, 'cmnd')
             resultMsg.then(result => { 
+                console.log("result ", result.pass, result.password)
                 req.session.flash = {
                     type: 'success',
-                    intro: 'Register success',
-                    message: 'Check your register email to login with default account'
+                    intro: 'Sign Up Success!',
+                    message: 'Please check your registered email',
+                    username: result.username,
+                    password: result.pass
                 }
+                
                 return res.json(result) 
             })
         })
-    },
+    }, 
 
     login : (req,res) => {
         const resObj = login.userLogin(req.body.username, req.body.password)
