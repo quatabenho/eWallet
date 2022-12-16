@@ -67,17 +67,17 @@ function handleNavigate(div){
   
   
   //chuyen trang
-  if(navTo == 'Dash Board'){
+  if(navTo == 'Trang chủ'){
     window.location.href = "/"
   }
    
-  if(navTo == 'Dep/Wdr')
+  if(navTo == 'Nạp / Rút')
     window.location.href = "/deposit_withdraw"
-  if(navTo == 'Profile')
+  if(navTo == 'Tài khoản')
     window.location.href = "/profile"
-  if(navTo == 'Transfer')
+  if(navTo == 'Chuyển tiền')
     window.location.href = "/transfer"
-  if(navTo == 'Buy Cards')
+  if(navTo == 'Mua thẻ')
     window.location.href = "/buy_cards"
 }
 
