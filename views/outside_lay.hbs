@@ -24,6 +24,15 @@
                 </button>
             </div>
         {{/if}}
+        {{#if flash.username}}
+        <div class="alert alert-dismissible alert-primary flash_style">
+            <strong>Username:</strong> {{{flash.username}}}
+            <strong>Password:</strong> {{{flash.password}}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {{/if}}
         
         {{{body}}}
     </div>

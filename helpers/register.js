@@ -17,16 +17,29 @@ async function userRegister(fields, files, secondLevelFolder){
 
     //validate register email existed or not
     const isExisted = checkEmailExistence(email)
+    const isChecked = checkPhone(phoneNumber)
     const finalObj = 
-        await isExisted.then(result => {
-            if(result) return {code: 104, msg: 'Email da ton tai'}
+        await isExisted.then(async result => {
+            if(result) 
+            {
+                return {code: 104, msg: 'Email da ton tai'}
+            }else{
+                const value = await isChecked.then(checked =>{
+                    console.log("Kiem tra ",checked);
+                    if(checked){
+                        return {code: 104, msg: 'So dien thoai da ton tai'}
+    
+                    }
+                    
+                    return saveInfoToDb(phoneNumber, email, hoTen, dateBirth, address, cmndTruoc, cmndSau, secondLevelFolder)
+                })
+                return value
 
-            //handle saving
-            saveInfoToDb(phoneNumber, email, hoTen, dateBirth, address, cmndTruoc, cmndSau, secondLevelFolder)
+            }
             
         })
     .then(finalMsg => {
-        if(!finalMsg) return {code: 0, msg: 'Register thanh cong'}
+        if(finalMsg.username) return {code: 0, msg: 'Register thanh cong', username: finalMsg.username, pass:finalMsg.password}
         return finalMsg
     })
     
@@ -70,6 +83,8 @@ function saveInfoToDb(phoneNumber, email, hoTen, dateBirth, address, cmndTruoc, 
     
         mailing(email, username, password)
     })
+    const new_accpass = {username, password}
+    return new_accpass
 }
 
 async function checkEmailExistence(email){
@@ -77,6 +92,17 @@ async function checkEmailExistence(email){
         const findEmail = await Account.findOne({email: email})
         //console.log('emai find one: ', findEmail)
         if(!findEmail) return false
+        return true //true -> da ton tai
+    }
+    catch(err){
+        return false //false -> chua ton tai 
+    }
+}
+async function checkPhone(phone){
+    try{
+        const find_phone = await Account.findOne({phonenumber: phone})
+        //console.log('emai find one: ', findEmail)
+        if(!find_phone) return false
         return true //true -> da ton tai
     }
     catch(err){
