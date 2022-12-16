@@ -930,18 +930,19 @@
 }
 
 .login_content{
+    margin-top: 50px;
     display: block;
     width: 100%;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     border-radius: 12px;
     
-    padding: 20px;
+    padding: 30px;
 }
 
 .login_title{
     text-align: center;
-    color: #51B4DD;
+    color: #0B032D;
 }
 
 .login_wrapper{
@@ -953,7 +954,7 @@
 }
 
 .login_box-title{
-    color: #6E6E6E;
+    color: #0B032D;
     font-size: 20px;
     font-weight: 500;
 }
@@ -966,8 +967,8 @@
 }
 
 .login_box-msg{
-    font-size: 20px;
-    color: #DC3545;
+    font-size: 15px;
+    color: #F46197  ;
     margin: 8px 0;
 }
 
@@ -980,7 +981,9 @@
 
 .login_box-register{
     margin-right: 12px;
-    color: #6E6E6E;
+    color: #F46197;
+    text-decoration: none; 
+
 }
 
 .login_box-forget{
@@ -992,6 +995,7 @@
     
     
 }
+
 
 .login_wrapper.register{
     width: 100%;

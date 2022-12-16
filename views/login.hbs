@@ -1,15 +1,16 @@
+{{!-- <br><br><br> --}}
 <div class="login_content">
-    <h1 class="login_title">LOGIN</h1>
+    <h1 class="login_title">ĐĂNG NHẬP</h1>
     <div class="login_wrapper">
         <div class="login_box">
-            <h6 class="login_box-title">Username</h6>
-            <input type="text" name="" id="login_box-username" class="login_box-input" placeholder="1111111111">
+            <h6 class="login_box-title">Tài khoản</h6>
+            <input type="text" name="" id="login_box-username" class="login_box-input" placeholder="">
             <span class="login_box-msg username"></span>
         </div>
 
         <div class="login_box">
-            <h6 class="login_box-title">Password</h6>
-            <input type="password" id="login_box-password" class="login_box-input" placeholder="Password">
+            <h6 class="login_box-title">Mật khẩu</h6>
+            <input type="password" id="login_box-password" class="login_box-input" placeholder="">
             <span class="login_box-msg pass"></span>
         </div>
 
@@ -17,13 +18,15 @@
             <span class="login_box-msg last"></span>
         </div>
 
-       <div>
-           <button type="button" class="btn btn-primary btn-lg btn-block" onclick="handleLogin()">Login</button>
-       </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="handleLogin()"
+                style="background-color: #f89a6b; color:#DAFFED">ĐĂNG NHẬP</button>
+        </div><br><br>
 
-       <div class="login_box-options">
-           <a href = '/register' class="login_box-register">Register</a>
-           <a href = '/forget_pass' class="login_box-forget">Forget Password</a>
-       </div>
+        <div style="text-align: end">
+            Chưa có tài khoản? <a href='/register' class="login_box-register" style="text-decoration:none;"> Đăng ký
+                ngay</a><br>
+            <a href='/forget_pass' class="login_box-forget" style="text-decoration:none;">Quên mật khẩu?</a>
+        </div>
     </div>
 </div>
